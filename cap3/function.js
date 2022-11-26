@@ -21,3 +21,20 @@ const power = function(base, exponent) {
 }
 
 console.log(power(2, 10));
+
+function minus(a, b){
+  if (b === undefined) {
+    return -a;
+  } else {
+    return a - b;
+  }
+}
+
+console.log(minus(5));
+console.log(minus(4, 1));
+
+function wrapValue(n) {
+  let local = n;
+  return () => local;
+}
+

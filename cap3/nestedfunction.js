@@ -16,6 +16,7 @@ const hummus = function(factor) {
   ingredient(1, "clove", "garlic");
   ingredient(2, "tablespoon", "olive oil");
   ingredient(0.5, "teaspon", "cumin");
+  ingredient(4, "teaspon", "salt");
 }
 
 hummus(2);

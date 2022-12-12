@@ -41,3 +41,12 @@ console.log(objectA);
 Object.assign(objectA, {b: 3, c: 4});
 
 console.log(objectA);
+
+let journal = [
+  {events: ["work", "touched tree", "telepizza"], squirrel: false},
+  {events: ["work", "bike", "taco"], squirrel: false},
+];
+
+console.log(journal[0].squirrel);
+
+console.log(journal[0].events);

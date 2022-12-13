@@ -23,3 +23,16 @@ function noisy(f) {
 noisy(Math.min)(3, 2, 1);
 
 // We can even write functions that provide new types of control flow.
+function unless(test, then) {
+  if (!test) {
+    then();
+  }
+}
+
+for (let i = 0; i <= 10; i++) {
+  unless(i % 2 == 1, () => {
+    console.log(i, "is even");
+  });
+}
+
+["A", "B"].forEach(l => console.log(l));

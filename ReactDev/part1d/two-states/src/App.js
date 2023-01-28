@@ -17,8 +17,9 @@ const History = (props) => {
   );
 }
 
-const Button = ({ handleClick, text }) => {
-  
+const Button = (props) => {
+  console.log(props)
+  const { handleClick, text } = props;
   return(
     <button onClick={handleClick}>
       {text}
@@ -33,6 +34,7 @@ const App = () => {
   const [left, setLeft] = useState(0);
   const [right, setRight] = useState(0);
   const [allClicks, setAll] = useState([]);
+  const [name, setName] = useState('Pekkita Haavisto');
 
   // We could implement the same functionality by saving the click count of 
   // both the left and right buttons into a single object:
@@ -52,6 +54,13 @@ const App = () => {
     setAll(allClicks.concat('R'));
     setRight(right + 1);
   }
+
+  // this is wrong!!!!!
+  /* if (left > 2){
+    const [foo, setFoo] = useState(null);
+  } */
+
+  // debugger
 
   // The History component renders completely different React elements 
   // depending on the state of the application. 

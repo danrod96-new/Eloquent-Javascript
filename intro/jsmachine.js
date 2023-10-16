@@ -12,4 +12,13 @@ function sum(arr) {
   }, 0);
 }
 
+function factorial (n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    return factorial(n - 1) * n;
+  }
+}
+
 console.log(total);
+console.log(factorial(6));

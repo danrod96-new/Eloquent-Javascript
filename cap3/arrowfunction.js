@@ -1,4 +1,17 @@
 
+/* 
+ * There’s a third notation for functions, which looks very different 
+ * from the others. Instead of the function keyword, it uses an 
+ * arrow (=>) made up of an equal sign and a greater-than character 
+ * (not to be confused with the greater-than-or-equal operator, 
+ * which is written >=).
+ *
+ * */
+
+// The arrow comes after the list of parameters and is followed by 
+// the function’s body. It expresses something like 
+// “this input (the parameters) produces this result (the body)”.
+
 const power = (base, exponent) => {
   let result = 1;
 

@@ -1,4 +1,11 @@
 
+/*
+ * The object1 and object2 bindings grasp the same object, which is why changing 
+ * object1 also changes the value of object2. They are said to have the same 
+ * identity. The binding object3 points to a different object, which initially 
+ * contains the same properties as object1 but lives a separate life.
+ */
+
 let object1 = {value: 10};
 let object2 = object1;
 let object3 = {value: 10};
@@ -43,6 +50,7 @@ function tableFor(event, journal) {
     if (entry.squirrel) index += 2;
     table[index] += 1;
   }
+  
   return table;
 }
 

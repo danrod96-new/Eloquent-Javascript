@@ -20,7 +20,31 @@ const reverseArray = (theArray) => {
 console.log(reverseArray([1, 2, 3, 4]));
 
 const reverseArrayInPlace = (theArray) => {
-  return (reverseArray(theArray));
+  let arrayLength = theArray.length;
+
+  if (arrayLength % 2 == 0){
+    for (let i = 0; i < ( arrayLength / 2); i++) {
+      let oldNum = theArray[i];
+      theArray[i] = theArray[arrayLength - (i + 1)]
+      theArray[arrayLength - (i + 1)] = oldNum;
+    }
+  } else {
+    for (let i = 0; i < Math.floor( arrayLength / 2); i++) {
+      let oldNum = theArray[i];
+      theArray[i] = theArray[arrayLength - (i + 1)]
+      theArray[arrayLength - (i + 1)] = oldNum;
+    }
+  }
 }
 
-console.log(reverseArrayInPlace([1, 2, 3, 4]));
+let theArray = [1, 2, 3, 4, 5, 8];
+
+reverseArrayInPlace(theArray);
+
+console.log(theArray);
+
+let theArray2 = [1, 2, 3, 4, 5];
+
+reverseArrayInPlace(theArray2);
+
+console.log(theArray2);

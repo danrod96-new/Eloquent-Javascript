@@ -47,3 +47,7 @@ console.log(range(1, 10, 2));
 console.log(sum(range(1, 10, 2)));
 console.log(range(10, 2, -2));
 console.log(sum(range(5, 2)));
+
+console.log("AND Finally");
+
+console.log(sum(range(1, 10)));

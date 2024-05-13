@@ -1,4 +1,5 @@
 
+// Automatic Type Conversion
 console.log(8 * null);
 
 console.log("5" - 1);

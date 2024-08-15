@@ -8,3 +8,15 @@ if (num < 10) {
 } else {
   console.log("Large");
 }
+
+let randnum = Math.random() * 20;
+
+console.log(randnum);
+
+if (randnum < 5) {
+  console.log("Very Small Num");
+} else if (num < 10) {
+  console.log("Not that Small");
+} else {
+  console.log("Smally");
+}

@@ -8,6 +8,10 @@
  *
  * */
 
+/* Arrow functions were introduced in ES6 / ECMAScript 2015 
+ * and since their introduction they changed forever how 
+ * JavaScript code looks (and works). */
+
 // The arrow comes after the list of parameters and is followed by 
 // the function’s body. It expresses something like 
 // “this input (the parameters) produces this result (the body)”.

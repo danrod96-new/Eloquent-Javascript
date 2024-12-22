@@ -37,3 +37,11 @@ console.log("Agnes" || "user");
 let myname = "Fred";
 
 console.log(`My name is ${myname}`);
+
+// 21/12/2024
+// If you don’t initialize the variable when you declare it, it will have the 
+// undefined value until you assign a value to it.
+
+var aba, b = " -Test- ";
+console.log(typeof a);
+console.log(b);

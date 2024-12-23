@@ -34,7 +34,12 @@ console.log(false == 0);
 console.log(null || "user");
 console.log("Agnes" || "user");
 
+/* let is a new feature introduced in ES2015 and it's essentially a block scoped version of var. 
+ * Its scope is limited to the block, statement or expression where it's defined, and all the contained 
+ * inner blocks. */
 let myname = "Fred";
+
+/* Defining let outside of any function - contrary to var - does not create a global variable. */
 
 console.log(`My name is ${myname}`);
 
@@ -43,5 +48,12 @@ console.log(`My name is ${myname}`);
 // undefined value until you assign a value to it.
 
 var aba, b = " -Test- ";
-console.log(typeof a);
+console.log(typeof aba);
 console.log(b);
+
+/* Variables declared with var or let can be changed later on in the program, and reassigned. 
+ * Once a const is initialized, its value can never be changed again, and it can't be reassigned to a 
+ * different value. */
+const a = "Test";
+
+console.log("My const value is: " + a);

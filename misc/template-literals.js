@@ -18,4 +18,9 @@ console.log(myString);
 
 const pi = 3.141592;
 const string3 = `Approx value of pi is ${pi}`;
-console.log(string3); 
+console.log(string3);
+
+// inside the ${} you can add anything, even expressions:
+const string4 = `Multiplying pi by 4 is: ${pi * 4}`;
+
+console.log(string4);

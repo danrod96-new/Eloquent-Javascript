@@ -1,3 +1,9 @@
+/* Starting with ES6, JavaScript introduced several features that help us with asynchronous 
+ * code that do not involve using callbacks:
+
+ * Promises (ES6)
+ * Async/Await (ES8) */
+
 /* Promises are one way to deal with asynchronous code, without 
  * writing too many callbacks in your code. */
 
@@ -12,7 +18,8 @@
 
 /* As you can see the promise checks the done global constant, and if 
  * that's true, we return a resolved promise, otherwise a rejected 
- * promise. Using resolve and reject we can communicate back a value, in the above case we just return a string, but it could be an object as well. */
+ * promise. Using resolve and reject we can communicate back a value, 
+ * in the above case we just return a string, but it could be an object as well. */
 
 let done = true;
 

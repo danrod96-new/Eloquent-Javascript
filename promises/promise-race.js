@@ -5,11 +5,13 @@
  */
 
 const promiseOne = new Promise((resolve, reject) => {
-  setTimeout(resolve, 500, 'one');
+  let randnum = Math.floor(Math.random() * 1000);
+  setTimeout(resolve, randnum, 'one');
 });
 
 const promiseTwo = new Promise((resolve, reject) => {
-  setTimeout(resolve, 1000, 'two');
+  let randnum = Math.floor(Math.random() * 1000);
+  setTimeout(resolve, randnum, 'two');
 });
 
 Promise.race([promiseOne, promiseTwo]).then(result => {

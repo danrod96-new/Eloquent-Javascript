@@ -47,3 +47,33 @@ fetch('https://jsonplaceholder.typicode.com/posts/3')
   .catch(error => {
     console.log("Request failed", error)
   })
+
+
+  // 28/12/2024
+  /* A promise can be returned to another promise, creating a chain of promises.
+   * A great example of chaining promises is given by the Fetch API, a layer on top of the 
+   * XMLHttpRequest API, which we can use to get a resource and queue a chain of promises to execute when the resource is fetched.
+   * The Fetch API is a promise-based mechanism, and calling fetch() is equivalent to defining our own promise using new Promise().
+   * Example (modified by danrod): */
+
+  const status2 = (response) => {
+    // Response was ok
+    if (response.status >= 200 & response.status < 300) {
+      return Promise.resolve(response);
+    }
+
+    return Promise.reject(new Error(response.statusText));
+  };
+
+  const json2 = (response) => response.json();
+
+  // Fetch returns a promise
+  fetch('http://json-test-files.ddev.site/dishes.json')
+    .then(status2)
+    .then(json)
+    .then(data => {
+      console.log("Request successfull, JSON data: ", data)
+    })
+     .catch(error => {
+      console.log("Request failed: ", error);
+     });

@@ -17,6 +17,12 @@ files, as libraries. */
 /* In this example, the uppercase.js module defines a default export, 
  * so when we import it, we can assign it a name we prefer: */
 
-import toUpperCase from './uppercase.mjs'
+// This is the ES Module syntax
+import toUpperCase from './uppercase.mjs';
+
+// CommonJS syntax
+import { a } from './many-imports.mjs';
 
 console.log(toUpperCase("Cholos"));
+
+console.log(a);

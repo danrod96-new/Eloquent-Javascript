@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
+/* This is a class component */
 class BlogPage extends Component {
   /* In the Component constructor, initialize this.state. For example 
    * the BlogPostExcerpt component might have a clicked state */
   constructor(props) {
     super(props)
-    this.state = { clicked: false }
+    this.state = { clicked: "TRUE", food: "Burguers" }
   }
 
   render() {
     return (
       <div>
         <h1>Main Blog Page</h1>
-        <p>Status: {this.state.clicked}</p> 
+        <p>Status: {this.state.clicked}</p>
+        <p>Food: {this.state.food}</p> 
       </div>
     )
   }
 }
 
-const BlogPostExcerpt = () => {
+/* This is a function component, a way to define a component */
+const BlogPostExcerpt = (props) => {
   return (
     <div>
-      <h3>Title</h3>
-      <p>Description</p>
+      <h3>Title: {props.title}</h3>
+      <p>Description: {props.description}</p>
     </div>
   )
 }
@@ -36,12 +37,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
     <BlogPage /> 
-    <BlogPostExcerpt />
+    <BlogPostExcerpt title="Next.js" description="The next generation JS Framework for Drupal?"/>
   </div> 
 )
-
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

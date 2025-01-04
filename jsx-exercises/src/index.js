@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 /* JSX provides a cool way to define CSS. */
 
@@ -12,7 +10,9 @@ import reportWebVitals from './reportWebVitals';
  * in an object: */
 
 var divStyle = {
-  color: 'red'
+  color: 'red',
+  fontSize: '26px',
+  TextDecoration: 'underline'
 };
 
 /* JSX is a technology that was introduced by React.
@@ -48,9 +48,6 @@ const LoginButton = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(element);
-root.render(element2);
-
 /* JSX accepts any kind of JavaScript mixed into it.
  * Whenever you need to add some JS, just put it inside curly braces 
  * {}. For example here's how to use a constant value defined 
@@ -58,36 +55,26 @@ root.render(element2);
 
 const paragraph2 = 'A Paragraph';
 
-root.render(
+/* This is a basic example. Curly braces accept any JS code: */
+
+const rows = ["French Fries", "Poutine", "Burgers"];
+
+/* Here’s a JSX snippet that wraps two components into a div tag: */
+
+root.render(<div style={divStyle}>
+  {element}
+  {element2}
+  <h2>Chilis  !</h2>
   <div id="test">
     <h1>A title 2</h1>
     <p>{paragraph2}</p>
   </div>
-);
-
-/* This is a basic example. Curly braces accept any JS code: */
-
-const rows = ["French Fries", "Poutine"];
-
-root.render(
   <table>
     {rows.map((row, i) => {
       return <tr>{row}</tr>
     })}
   </table>,
-);
-
-/* Here’s a JSX snippet that wraps two components into a div tag: */
-
-root.render(<div style={divStyle}>
-  <h2>Chilis  !</h2>
   <LoginButton />
   <SubmitButton />
 </div>,
 document.getElementById('root'));
-
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

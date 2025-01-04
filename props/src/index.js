@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 /* Props is how Components get their properties. 
  * Starting from the top component, every child component 
  * gets its props from the parent. In a function component, props is 
  * all it gets passed, and they are available by adding props as the 
  * function argument  */
+
+
+/* This is a Pure component also, if the component is called million times with the same arguments
+ * the output will be the same */
 
 const BlogRow = (props) => {
   return(
@@ -24,6 +26,8 @@ const BlogRow = (props) => {
  * There is no need to add anything special, and they are 
  * accessible as this.props in a Component instance. */
 
+/* Class components can be pure if the output only depends of the props, like this class: */
+
 class BlogPage extends Component {
   render() {
     return (
@@ -33,6 +37,22 @@ class BlogPage extends Component {
       </div> 
     )
   }
+}
+
+/* Use an outer component to expand and specialize a more generic component */
+
+// Generic Button component
+const Button = (props) => {
+  return <button>{props.text}</button>
+}
+
+//Specialized components
+const SubmitButton = () => {
+  return <Button text="Submit"></Button>
+}
+
+const LoginButton = () => {
+  return <Button text="Login"></Button>
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -50,10 +70,10 @@ root.render(
     <BlogPage title={title} description={desc}>
      </BlogPage>
     <BlogRow title="Lando or DDEV" description="Do you like DDEV or Lando for your local containers?"/>
+    <BlogRow title="Rust or Golang" description="Should I learn Rust or Golang? or both?"/>
+    <BlogRow title="Review the C book?" description="I'd like to read my C book again"/>
+    <SubmitButton />
+    <LoginButton />
   </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

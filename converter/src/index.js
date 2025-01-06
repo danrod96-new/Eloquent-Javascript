@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 /* The state can be mutated by a child component by passing a mutating 
  * function down as a prop */
@@ -18,7 +16,7 @@ class Converter extends React.Component {
   /* Initialize this.state with an initial currency object */
   constructor(props) {
     super(props)
-    this.state = { currency: '€'}
+    this.state = { currency: '€', quantity: 5000 }
   }
 
   /* This looks like an "Event Class" or something ? */
@@ -31,16 +29,19 @@ class Converter extends React.Component {
 
   /* It’s a convention to have event handlers defined as methods 
    * on the Component class:  */
+
+  // It is a mutating function
   handleChangeCurrency = event => {
-    this.setState({ currency: this.state.currency === '€' ? '$' : '€' })
+    this.setState({ currency: this.state.currency === '€' ? '$' : '€', quantity: this.state.quantity - 100 })
   }
 
   render() {
     return (
      <div>
-      <Display currency={this.state.currency} />
+      <Display currency={this.state.currency} quantity={this.state.quantity} />
       <CurrencySwitcher 
         currency={this.state.currency}
+        quantity={this.state.quantity}
         handleChangeCurrency={this.handleChangeCurrency}
       />
      </div> 
@@ -54,19 +55,20 @@ const CurrencySwitcher = (props) => {
     // Sets the onclick Event
     <button onClick={props.handleChangeCurrency}>
       Current currency is {props.currency}. Change it!
+      Current quantity is {props.quantity}. Click on the button to substract 100
     </button>
   )
 }
 
 const Display = (props) => {
-  return <p>Current currency is {props.currency}.</p>
+  return (
+    <div>
+      <p>Current currency is {props.currency}.</p>
+      <p>Current quantity is: {props.quantity}</p>
+    </div>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<Converter />)
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

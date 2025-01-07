@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import PropTypes from 'prop-types';
 
 /* Props is how Components get their properties. 
  * Starting from the top component, every child component 
@@ -12,14 +13,27 @@ import './index.css';
 /* This is a Pure component also, if the component is called million times with the same arguments
  * the output will be the same */
 
+/* A special prop is children. That contains the value of anything that is passed in the body of the component, 
+ * for example: */
+
 const BlogRow = (props) => {
   return(
     <div>
       <h4>{props.title}</h4>
-      <p>{props.description}</p> 
+      <p>{props.description}</p>
       <hr />
     </div>
   )
+}
+
+BlogRow.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string
+}
+
+BlogRow.defaultProps = {
+  title: 'Default Title',
+  description: 'Default Description'
 }
 
 /* In a class component, props are passed by default. 
@@ -34,6 +48,7 @@ class BlogPage extends Component {
       <div>
         <h1>{this.props.title}</h1>
         <p>{this.props.description}</p>
+        <p><img src={this.props.children} alt="Hidroeléctrica de Sogamoso" /></p> 
       </div> 
     )
   }
@@ -68,10 +83,12 @@ const desc = "Blog for IT Geeks";
 root.render(
   <div>
     <BlogPage title={title} description={desc}>
+      https://www.bucaramanga.com/custom/domain_1/image_files/sitemgr_hidro2.jpg
      </BlogPage>
     <BlogRow title="Lando or DDEV" description="Do you like DDEV or Lando for your local containers?"/>
     <BlogRow title="Rust or Golang" description="Should I learn Rust or Golang? or both?"/>
     <BlogRow title="Review the C book?" description="I'd like to read my C book again"/>
+    <BlogRow />
     <SubmitButton />
     <LoginButton />
   </div>

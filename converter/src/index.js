@@ -31,6 +31,8 @@ class Converter extends React.Component {
    * on the Component class:  */
 
   // It is a mutating function
+  /* If you use class components, don’t forget to bind methods. The methods of ES6 classes by default are 
+   * not bound. What this means is that this is not defined unless you define methods as arrow functions */
   handleChangeCurrency = event => {
     this.setState({ currency: this.state.currency === '€' ? '$' : '€', quantity: this.state.quantity - 100 })
   }

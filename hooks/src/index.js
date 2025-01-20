@@ -48,17 +48,16 @@ const CounterWithNameAndSideEffect = () => {
   /* Since the useEffect() functions are run on every subsequent re-render/update, we can tell 
    * React to skip a run, for performance purposes, by adding a second parameter which is an array that contains a 
    * list of state variables to watch for. React will only re-run the side effect if one of the items in this array changes.*/
-  /* useEffect(
+  useEffect(
     () => {
       console.log(`Hi ${name} you clicked ${count} times`)
+      /* Similarly you can tell React to only execute the side effect once (at mount time), by passing an empty array:  */
+      return () => {
+        console.log(`Unmounted`);
+      }
     },
-    [name, count]
-  ); */
-
-  /* Similarly you can tell React to only execute the side effect once (at mount time), by passing an empty array:  */
-  useEffect(() => {
-    console.log(`Component mounted`)
-  }, []);
+    [name, count],
+  );
 
   return(
     <div>

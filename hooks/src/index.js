@@ -51,10 +51,6 @@ const CounterWithNameAndSideEffect = () => {
   useEffect(
     () => {
       console.log(`Hi ${name} you clicked ${count} times`)
-      /* Similarly you can tell React to only execute the side effect once (at mount time), by passing an empty array:  */
-      return () => {
-        console.log(`Unmounted`);
-      }
     },
     [name, count],
   );
@@ -84,19 +80,21 @@ const ButtonInit = () => {
 
 /* Any parameter used inside the function must be passed through a second parameter to useCallback(), in an array: */
 const ButtonInit2 = () => {
-  const [name, setName] = useState('Marcia');
+  const [firstname, setFirstName] = useState('Marcia');
+  const [lastname, setLastName] = useState('Fontalvo');
 
   /* Similarly you can tell React to only execute the side effect once (at mount time), by passing an empty array:  */
   useEffect(() => {
-    console.log(`my first name is ${name}`)
-  }, [name]);
+    console.log(`my first name is ${firstname} and my last name is ${lastname}`)
+  }, [firstname, lastname]);
 
   const handleClick = useCallback(
     () => {
-      setName("Fontalvo")
-      console.log(`my last name is ${name}`)
+      setFirstName("Carolina")
+      setLastName("Olivares")
+      console.log(`my first and last name is now ${firstname} ${lastname}`)
     },
-    [name]
+    [firstname, lastname]
   )
 
   return (

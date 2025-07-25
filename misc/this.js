@@ -3,7 +3,7 @@
 
 /* When defined as a method of an object, in a regular function "this" refers to the object, so you can do: */
 
-const car = {
+const info = {
   city: 'Nazareth',
   country: 'Israel',
   fullCity: function() {
@@ -11,4 +11,4 @@ const car = {
   }
 };
 
-console.log(car.fullCity());
+console.log(info.fullCity());

@@ -12,6 +12,12 @@ Great !!!`;
 
 console.log(myString);
 
+const myString2 = `First
+                   Second`
+
+console.log("In template literals, space is vital, we will see that...")
+console.log(myString2);
+
 // Interpolation
 /* Template literals provide an easy way to interpolate variables and expressions into strings.
  * You do so by using the ${...} syntax: */

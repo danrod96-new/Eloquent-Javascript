@@ -24,6 +24,9 @@ const daniel = new Person('Daniel Rodriguez');
 
 console.log(daniel.hello());
 
+daniel.name = "Alf";
+console.log("Now my name is " + daniel.name);
+
 /* Class inheritance */
 
 /* A class can extend another class, and objects initialized using that class inherit all the 

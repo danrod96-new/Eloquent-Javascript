@@ -10,6 +10,9 @@ const b = [...a, 6, 7, 8];
 // copy of the array
 const c = [...a];
 
+console.log("The original array")
+console.log(a);
+
 console.log("New array using the spread operator");
 console.log(b);
 
@@ -20,6 +23,9 @@ const coords = {
   x: 3.145314,
   y: 1.10432,
 };
+
+console.log("Original Class");
+console.log(coords);
 
 const newObj = {...coords};
 
@@ -76,6 +82,8 @@ const person = {
 // Destructuring the object
 const { firstName, age } = person;
 
+console.log("The original object was, before the destructuring:")
+console.log(person);
 console.log("The first name of the musician is " + firstName + " and his age is " + age + " years old, can you guess who he is?");
 
 

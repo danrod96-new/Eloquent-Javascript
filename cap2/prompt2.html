@@ -1,0 +1,19 @@
+<html>
+  <head>
+   <title>Usage of prompt</title> 
+  </head>
+  <script>
+    let name = prompt("Enter a name:");
+    console.log("Your name is: " + name);
+
+    // Checks that the value is actually a number
+    let theNumber = Number(prompt("Enter a number: "));
+    if (!Number.isNaN(theNumber)) {
+      console.log("Your number is the square root of " + theNumber * theNumber);
+    } else {
+      console.log("Hey, why you did not give me a number: ?")
+    }
+  </script>
+<body>
+</body>
+</html>

@@ -1,4 +1,5 @@
 let ten = 10;
+console.log("ten is binding or a variable, it holds the value 10")
 console.log(ten * ten);
 
 let mood = "light";
@@ -11,6 +12,7 @@ lugisDebt = lugisDebt - 35;
 console.log(lugisDebt); 
 
 let one = 1, two = 2;
+console.log("The value of one + two is:")
 console.log(one + two);
 
 var names = "Aida";
@@ -22,6 +24,7 @@ console.log("The value of x is", x);
 
 // The Math namespace object contains static properties and methods
 // for mathematical constants and functions
+console.log("Usae of Math.max()")
 console.log(Math.max(2, 4)); // 4
 
 console.log(Math.min(-2, -4) + 100); // 96

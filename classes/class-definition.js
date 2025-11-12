@@ -37,7 +37,7 @@ console.log("Now my name is " + daniel.name);
 
 class Programmer extends Person {
   hello() {
-    return super.hello() + ' I am a programmer. '
+    return super.hello() + ' I am a programmer. ';
   }
 }
 

@@ -1,4 +1,5 @@
 let ten = 10;
+
 console.log("ten is binding or a variable, it holds the value 10")
 console.log(ten * ten);
 
@@ -9,12 +10,14 @@ console.log(mood);
 
 let lugisDebt = 140;
 lugisDebt = lugisDebt - 35;
+
 console.log(lugisDebt); 
 
 let one = 1, two = 2;
 console.log("The value of one + two is:")
 console.log(one + two);
 
+console.log("Using the var to declare a variable (in the old way):");
 var names = "Aida";
 const greeting = "Hello ";
 console.log(greeting + names);
@@ -30,7 +33,6 @@ console.log(Math.max(2, 4)); // 4
 console.log(Math.min(-2, -4) + 100); // 96
 
 let theNumber = "400";
-
 
 // The Number constructor contains constants and methods for working with 
 // numbers. Values of other types can be converted to numbers using 

@@ -26,24 +26,30 @@ const power = (base, exponent) => {
   return result;
 };
 
+const roundTo = (n, step) => {
+  let remainder = n % step;
+  return n - remainder + (remainder < step / 2  ? 0 : step);
+};
+
 let result = power(2, 4);
 console.log(result);
 
 const square = (x) => { return x * x };
 const square2 = (x) => x * x;
 
+console.log("These are one-line function executions");
 console.log(square(2));
 console.log(square(45));
 
 const horn = () => {
-  console.log("Tootsie");
+  console.log("Tootsie - This is an arrow function without arguments");
 }
-
-console.log(horn());
 
 function greet(who) {
   console.log("Hello " + who);
 }
 
-greet("Harry");
+console.log("execution of roundTo as an arrow function");
+console.log(roundTo(23, 10));
+
 console.log("Bye");

@@ -22,7 +22,9 @@ const hummus = function(factor) {
   // function. But its local bindings, such as unit or ingredientAmount, are not visible 
   // in the outer function.
   ingredient(1, "can", "chickpeas");
-  ingredient(0.25, "slice", "pineapple");
+  ingredient(0.25, "slice", "garlic");
+  ingredient(2, "teaspoon", "olive oil");
+  ingredient(0.5, "tablespoon", "cumin")
 }
 
 hummus(1);

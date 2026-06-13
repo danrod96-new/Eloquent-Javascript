@@ -35,6 +35,9 @@ let anObject = {
 
 console.log(anObject.left);
 
+/* The delete operator cuts off a tentacle from such an octopus. 
+ * It is a unary operator that, when applied to an object property, will remove the named property 
+ * from the object. */
 delete anObject.left;
 
 console.log(anObject.left);
@@ -45,23 +48,35 @@ console.log("left" in anObject);
 
 console.log("right" in anObject);
 
-/* To find out what properties an object has, you can use the Object.keys function. You give it an object, and it returns an array of strings—the object’s property names. */
+/* To find out what properties an object has, you can use the Object.keys function. 
+You give it an object, and it returns an array of strings—the object’s property names. */
 
+console.log("Getting the properties of the object by using Object.keys: ");
 console.log(Object.keys({x: 0, y: 0, z: 2}));
 
 let objectA = {a: 1, b: 2};
 
+console.log("Initial contents of the object objectA");
 console.log(objectA);
 
+/* There’s an Object.assign function that copies all properties from one object into another */
 Object.assign(objectA, {b: 3, c: 4});
 
+console.log("Contents of objectA after copying all the properties of one object into it");
 console.log(objectA);
+
+/* Arrays, then, are just a kind of object specialized for storing sequences of things. 
+ * If you evaluate typeof [], it produces "object". You can visualize arrays as long, flat 
+ * octopuses with all their tentacles in a neat row, labeled with numbers */
 
 let journal = [
   {events: ["work", "touched tree", "telepizza"], squirrel: false},
   {events: ["work", "bike", "taco"], squirrel: false},
+  {events: ["weekend", "cycling", "break", "peanuts", "beer"], squirrel: true},
 ];
 
 console.log(journal[0].squirrel);
 
 console.log(journal[0].events);
+
+console.log(journal[2].squirrel);

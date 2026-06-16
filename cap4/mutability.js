@@ -74,15 +74,21 @@ console.log(tableFor("pizza", journal));
 
 console.log(phi([76, 9, 4, 1]));
 
+/* There is a simpler way to loop through an array in JS */
+console.log("Looping through an array in Javascript to see the number of events in each journal log:");
 for (let entry of journal) {
   console.log(`${entry.events.length} events.`);
 }
 
+/* We need to compute a correlation for every type of event that occurs in the dataset. 
+ * To do that, we first need to find every type of event */
 function journalEvents(journal) {
   let events = [];
 
+  // Loop through every array in journal
   for (let entry of journal) {
     for (let event of entry.events) {
+      //if event is not in the events array yet, include it
       if (!events.includes(event)) {
         events.push(event);
       }
@@ -92,12 +98,17 @@ function journalEvents(journal) {
   return events;
 }
 
+console.log("Events available:")
 console.log(journalEvents(journal));
 
+/* Using the function journalEvents, we can see all the correlations */
+console.log("Calculating the correlations for each event:")
 for (let event of journalEvents(journal)) {
   console.log(event + " : ", phi(tableFor(event, journal)));
 }
 
+/* filter the results to show only correlations greater than 0.1 or less than -0.1 */
+console.log("Narrow down the results:")
 for (let event of  journalEvents(journal)) {
   let correlation = phi(tableFor(event, journal));
 

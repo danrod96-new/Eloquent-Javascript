@@ -37,6 +37,15 @@ let coordinates = {x: 10, y: 0};
 console.log("Using the spread ... operator in objects:");
 console.log({...coordinates, y: 5, z: 1});
 
+/* The Math object is used as a container to group a bunch of related functionality (sqrt, max, min). 
+ * There is only one Math object, and it is almost never useful as a value. Rather, it 
+ * provides a namespace so that all these functions and values do not have to be global bindings */
+
+/* Back to the Math object. If you need to do trigonometry, Math can help. 
+ * It contains cos (cosine), sin (sine), and tan (tangent), as well as their inverse functions, 
+ * acos, asin, and atan, respectively. The number π (pi)—or at least the closest approximation that 
+ * fits in a JavaScript number—is available as Math.PI. There is an old programming tradition of 
+ * writing the names of constant values in all caps */
 function randomPointOfCircle(radius) {
   let angle = Math.random() * 2 * Math.PI;
 
@@ -45,4 +54,8 @@ function randomPointOfCircle(radius) {
 
 console.log(randomPointOfCircle(2));
 
+/* The previous example used Math.random. This is a function that returns a new pseudorandom 
+ * number between 0 (inclusive) and 1 (exclusive) every time you call it */
+/* If we want a whole random number instead of a fractional one, we can use Math.floor 
+ * (which rounds down to the nearest whole number) on the result of Math.random */
 console.log(Math.floor(Math.random() * 10));

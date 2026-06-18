@@ -43,11 +43,13 @@ const sum = (numbers) => {
   return summatory;
 }
 
+console.log("Range of numbers between 1 and 10, with a step (increment) of 2:");
 console.log(range(1, 10, 2));
+console.log("The sum of that range:");
 console.log(sum(range(1, 10, 2)));
+console.log("Range of numbers between 10 and 2, with a step (increment) of -2:");
 console.log(range(10, 2, -2));
+console.log("The sum of the range of numbers between 5 and 2 (step 1 by default):");
 console.log(sum(range(5, 2)));
-
-console.log("AND Finally");
-
+console.log("AND Finally the sum of numbers between 1 and 10:");
 console.log(sum(range(1, 10)));
